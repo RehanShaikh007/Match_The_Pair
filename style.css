@@ -1,0 +1,66 @@
+body {
+    font-family:'Comic Sans MS', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #23828d, #01474c);
+    margin: 0;
+    /* border: 1px solid red; */
+  }
+
+  .game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    width: 120px;
+    height: 120px;
+    background-color: #1abc9c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transform: perspective(600px) rotateY(0deg);
+    transition: transform 0.6s;
+  }
+
+  .card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .card.flipped {
+    background-color: #ecf0f1;
+    transform: perspective(600px) rotateY(180deg);
+    color: black;
+    font-size: 40px;
+    transition: transform 0.6s;
+  }
+
+  .attempts {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    margin-left: 2em;
+  }
+  .attempts span {
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  @media (max-width: 600px) {
+    .game-container {
+      grid-template-columns: repeat(2, 100px);
+    }
+    .card {
+      width: 100px;
+      height: 100px;
+    }
+  }
